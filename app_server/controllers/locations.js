@@ -34,7 +34,10 @@ const homelist = (req, res) => {
 };
 /* GET 'Location info' page */
 const locationInfo = (req, res) => {
-  res.render('location-info', { title: 'Location info', locationData: locationData });
+  res.render('location-info', { 
+    title: 'Starcups',
+    locationData: locationData 
+  });
 };
 
 const locationData = {

@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 require('./locations');
-const dbURI = "mongodb+srv://abhi:abhi125xx@cluster0.f2nlm8s.mongodb.net/loc8r?retryWrites=true&w=majority&appName=Cluster0";
+const dbURI = "mongodb://127.0.0.1:27017/loc8r";
 
 // Connect to MongoDB
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
+}).catch(err => {
+  console.log('Could not connect to MongoDB. Error:', err);
 });
 // CONNECTION EVENTS
 mongoose.connection.on('connected', () => {
